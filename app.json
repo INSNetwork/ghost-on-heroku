@@ -13,7 +13,8 @@
   "env": {
     "APP_PUBLIC_URL": {
       "description": "The HTTPS URL of this app: either your custom domain or default 'herokuapp.com' hostname.",
-      "value": "https://YOURAPPNAME.herokuapp.com"
+      "value": "https://YOURAPPNAME.herokuapp.com",
+      "required": true
     },
     "SENDGRID_API_KEY": {
       "description": "Sendgrid API key. For sending transactional emails.",
