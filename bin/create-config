@@ -23,38 +23,6 @@ function createConfig() {
         assetHost:       process.env.S3_ASSET_HOST_URL
       }
     }
-  } else if (!!process.env.BUCKETEER_AWS_ACCESS_KEY_ID) {
-    fileStorage = true
-    storage = {
-      active: 's3',
-      's3': {
-        accessKeyId:     process.env.BUCKETEER_AWS_ACCESS_KEY_ID,
-        secretAccessKey: process.env.BUCKETEER_AWS_SECRET_ACCESS_KEY,
-        bucket:          process.env.BUCKETEER_BUCKET_NAME,
-        region:          process.env.S3_BUCKET_REGION,
-        assetHost:       process.env.S3_ASSET_HOST_URL
-      }
-    }
-  } else if (!!process.env.CLOUDINARY_URL) {
-    fileStorage = true
-    storage = {
-      active: 'ghost-storage-cloudinary',
-      'ghost-storage-cloudinary': {
-        useDatedFolder: false,
-        upload: {
-          use_filename: true,
-          unique_filename: false,
-          overwrite: false,
-          folder: "ghost-blog-images",
-          tags: ["blog"]
-        },
-        fetch: {
-          quality: "auto",
-          secure: true,
-          cdn_subdomain: true
-        }
-      }
-    }
   } else {
     fileStorage = false
     storage = {}
@@ -69,10 +37,12 @@ function createConfig() {
     mail: {
       transport: 'SMTP',
       options: {
-        service: 'Mailgun',
+        service: 'sendgrid',
+        host: 'smtp.sendgrid.net',
+        port: '587',
         auth: {
-          user: process.env.MAILGUN_SMTP_LOGIN,
-          pass: process.env.MAILGUN_SMTP_PASSWORD
+          user: "apikey",
+          pass: process.env.SENDGRID_API_KEY
         }
       }
     },
