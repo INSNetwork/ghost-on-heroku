@@ -1,0 +1,48 @@
+<footer class="footer">
+    <section class="container">
+        <div class="row">
+            {{!-- About --}}
+            <div class="col s12 m6 l4 u-marginBottom30 u-flexColumnTop">
+                <div class="footer-items u-flexColumnTop u-flex--1">
+                    <h3 class="footer-items-title u-underline u-fontSize22">We're here to help</h3>
+                    <div class="footer-b u-flex--1">
+                        <p>Visit our support desk when you need assistance.</p>
+                        <a class="help" target="_blank" href="https://insightsnetwork.zendesk.com/hc/en-us">Get Help &gt;</a>
+                    </div>
+
+                    {{!-- Social Media - partilas/widget/social-media.hbs --}}
+                    {{> "widget/social-media"}}
+                </div>
+            </div>
+            <div class="col s12 m2 1 u-marginBottom30 u-flexColumnTop"></div>
+            {{!-- Tag Cloud --}}
+            <div class="col s12 m6 l3 u-marginBottom30 u-flexColumnTop">
+                <div class="footer-items footer-tags u-flex--1">
+                    <h3 class="footer-items-title u-underline u-fontSize22">Offerings</h3>
+                    <div class="buttonSet">
+                        <a href="https://instars.com">Web Wallet</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.instar.wallet">Android</a>
+                        <a href="https://requesters.instars.com">Create Survey</a>
+                        <a href="https://instars.com/login">Refer a Friend</a>
+                        <a href="https://instars.com/advertise">Advertise</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l3 u-marginBottom30 u-flexColumnTop">
+                <div class="footer-items footer-tags u-flex--1">
+                    <h3 class="footer-items-title u-underline u-fontSize22">About us</h3>
+                    <div class="buttonSet">
+                        <a href="https://instars.com/our-mission">Our Mission</a>
+                        <a href="https://instars.com/articles">Research Reports</a>
+                        <a target="_blank" href="https://insights.network/contact_us/">Careers</a>
+                        <a target="_blank" href="https://insightsnetwork.zendesk.com/hc/en-us">Support</a>
+                    </div>
+                </div>
+            </div>
+            {{!-- Copy --}}
+            <div class="col s12 u-paddingTop20 u-textAlignCenter u-fontSizeSmaller">
+                &copy; {{date format="YYYY"}} {{@site.title}}
+            </div>
+        </div>
+    </section>
+</footer>
